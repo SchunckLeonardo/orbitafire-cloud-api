@@ -3,7 +3,7 @@ spring:
     name: orbitafire-cloud-api
 
 server:
-  port: 8000
+  port: 5000
 
 management:
   endpoints:

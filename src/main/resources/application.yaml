@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: orbitafire-cloud-api
+
+server:
+  port: 8000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+    health:
+      show-details: always
+
+info:
+  app:
+    name: OrbitaFire Cloud API
+    description: API para monitoramento de risco de queimadas com dados orbitais
+    version: 1.0.0

@@ -34,12 +34,12 @@ jobs:
           zip -r ../orbitafire-cloud-api.zip .
 
       - name: Deploy to AWS Elastic Beanstalk
-        uses: aws-actions/aws-elasticbeanstalk-deploy@v1
+        uses: einaregilsson/beanstalk-deploy@v22
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          region: ${{ secrets.AWS_REGION }}
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: orbitafire-cloud-api
           environment_name: Orbitafire-cloud-api-env-1
           version_label: orbitafire-${{ github.sha }}
+          region: ${{ secrets.AWS_REGION }}
           deployment_package: orbitafire-cloud-api.zip
